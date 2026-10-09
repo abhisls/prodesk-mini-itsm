@@ -1,0 +1,7 @@
+<!DOCTYPE html><html><head><title>ProDesk Login</title>
+    <style>body{font-family:sans-serif;background:#0f172a;display:flex;justify-content:center;align-items:center;height:100vh;color:white} .card{background:#1e293b;padding:30px;border-radius:12px;width:300px} input,button{width:100%;padding:10px;margin-top:10px;border-radius:6px;border:none} button{background:#22c55e;color:white;cursor:pointer}</style>
+    </head><body>
+    <div class="card"><h2>ProDesk Login</h2><input id="email" placeholder="admin@prodesk.com"><input id="pass" type="password" placeholder="admin123"><button onclick="login()">Login</button></div>
+    <script>
+    function login(){fetch('../backend/login.php',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:`email=${email.value}&password=${pass.value}`}).then(r=>r.json()).then(d=>{if(d.status=='success'){localStorage.setItem('role',d.role); location.href=d.role=='admin'?'dashboard.html':'my-tasks.html'}else alert('Wrong')})}
+    </script></body></html>
