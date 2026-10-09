@@ -1,12 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#111] flex justify-center items-center min-h-screen">
+<div class="bg-white p-8 rounded-[24px] w-[420px]">
+<h1 class="text-2xl font-bold text-center">ProDesk Login</h1>
+<p class="text-gray-500 text-sm text-center mb-6">Mini ITSM for Factory</p>
+
+<label class="text-sm">Email</label>
+<input id="email" value="admin@prodesk.com" class="w-full p-3 border rounded-lg mb-3">
+
+<label class="text-sm">Password</label>
+<input id="pass" type="password" value="admin123" class="w-full p-3 border rounded-lg mb-3">
+
+<label class="text-sm">ROLE</label>
+<select class="w-full p-3 border rounded-lg mb-4 bg-gray-100">
+<option>Admin</option><option>Technician</option><option>User</option>
+</select>
+
+<button onclick="checkLogin()" class="bg-black text-white w-full p-3 rounded-lg">Login</button>
+</div>
+
 <script>
 function checkLogin(){
-  let email = document.getElementById('email').value;
-  let password = document.getElementById('pass').value;
-  if(email == "admin@prodesk.com" && password == "admin123"){
-    localStorage.setItem("isAdmin","true");
+  let p = document.getElementById('pass').value;
+  if(p === "admin123"){
     window.location.href = "admin.html";
   } else {
-    alert("Galat Password!");
+    alert("Password galat hai bawa! admin123 daal");
   }
 }
 </script>
+</body>
+</html>
