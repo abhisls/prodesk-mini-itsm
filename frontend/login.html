@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<title>ProDesk - Login</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-[#111] flex justify-center items-center min-h-screen">
-<div class="bg-white p-8 rounded-[24px] w-[420px]">
-<h1 class="text-2xl font-bold text-center">ProDesk Login</h1>
-<p class="text-gray-500 text-sm text-center mb-6">Mini ITSM for Factory</p>
+<body class="bg-[#0a0a0a] min-h-screen flex items-center justify-center p-4">
 
-<label class="text-sm">Email</label>
-<input id="email" value="admin@prodesk.com" class="w-full p-3 border rounded-lg mb-3">
+<div class="w-full max-w-[440px] bg-white rounded-[24px] p-8 shadow-2xl">
+<!-- Logo -->
+<div class="text-center mb-8">
+<div class="w-14 h-14 mx-auto bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center text-white text-2xl mb-3">
+<i class="fa-solid fa-cube"></i>
+</div>
+<h1 class="text-2xl font-bold">ProDesk</h1>
+<p class="text-sm text-gray-500">Mini ITSM Factory - Login</p>
+</div>
 
-<label class="text-sm">Password</label>
-<input id="pass" type="password" value="admin123" class="w-full p-3 border rounded-lg mb-3">
+<!-- Form -->
+<label class="text-sm font-medium">Email</label>
+<input id="email" type="email" value="admin@prodesk.dev" class="w-full p-3 border rounded-xl mt-1 mb-4 outline-none focus:border-black">
 
-<label class="text-sm">ROLE</label>
-<select class="w-full p-3 border rounded-lg mb-4 bg-gray-100">
-<option>Admin</option><option>Technician</option><option>User</option>
+<label class="text-sm font-medium">Password</label>
+<input id="pass" type="password" value="admin123" class="w-full p-3 border rounded-xl mt-1 mb-4 outline-none focus:border-black">
+
+<label class="text-sm font-medium">Role</label>
+<select class="w-full p-3 border rounded-xl mt-1 mb-6 bg-gray-50">
+<option>Admin</option>
+<option>Technician</option>
+<option>User</option>
 </select>
 
-<button onclick="checkLogin()" class="bg-black text-white w-full p-3 rounded-lg">Login</button>
+<button onclick="doLogin()" class="w-full bg-black text-white p-3 rounded-xl font-medium hover:bg-gray-900">Login to Dashboard <i class="fa-solid fa-arrow-right ml-2"></i></button>
+
+<p class="text-xs text-center text-gray-400 mt-4">Demo: admin@prodesk.dev / admin123</p>
 </div>
 
 <script>
-function checkLogin(){
+function doLogin(){
+  let e = document.getElementById('email').value;
   let p = document.getElementById('pass').value;
-  if(p === "admin123"){
+  if(e === "admin@prodesk.dev" && p === "admin123"){
+    localStorage.setItem("isAdmin","true");
     window.location.href = "admin.html";
   } else {
-    alert("Password galat hai bawa! admin123 daal");
+    alert("Galat hai! Email: admin@prodesk.dev / Pass: admin123");
   }
 }
 </script>
