@@ -1,15 +1,17 @@
-# ProDesk - Mini IT Service Management System
-Role-based Ticket/Task Manager built for IT Teams.
+# ProDesk - Mini ITSM System for Factory IT
 
-**Live Demo:** [Your Hostinger Link]
-**Tech Stack:** PHP, MySQL, JavaScript, Chart.js, Session Auth
+Live Demo (Frontend): https://abhisls.github.io/prodesk-mini-itsm/frontend/login.html
+Tech Stack: HTML, Tailwind CSS, Core PHP, MySQL
 
-**Features**
-- Admin: Create, Assign, Track Tasks
-- Employee: Update Status
-- Dashboard Analytics with Chart.js
-- Secure Login
+## Features
+- Role Based Login (Admin / Technician / User)
+- Ticket Management (High/Medium/Low Priority)
+- Task Status (Open / In Progress / Closed)
+- Dashboard with Live Tickets
 
-**Login**
-Admin: admin@prodesk.com / admin123
-Employee: emp@prodesk.com / emp123
+## How to Run (XAMPP)
+1. Import database.sql in phpMyAdmin
+2. Put project in htdocs/
+3. Start Apache & MySQL
+4. Open: localhost/prodesk-mini-itsm/frontend/login.html
+Login: admin@prodesk.com / admin123
